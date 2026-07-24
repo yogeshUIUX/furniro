@@ -1,15 +1,13 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { LayoutComponent } from "./layout/layout.component";
+import { Component, inject } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LayoutComponent, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'furniro';
