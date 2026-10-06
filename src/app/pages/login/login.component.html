@@ -1,0 +1,50 @@
+<main class="login-page">
+	<section class="login-showcase" aria-label="Furniro interior">
+		<img src="../../../assets/images/scandinavian_interior_background.jpg" alt="A calm, sunlit Scandinavian living room">
+		<div class="showcase-copy">
+			<span class="showcase-kicker">A HOME TO COME BACK TO</span>
+			<p>Thoughtful pieces.<br>Rooms that feel like you.</p>
+		</div>
+		<span class="showcase-index" aria-hidden="true">F / 01</span>
+	</section>
+
+	<section class="login-content" aria-labelledby="login-title">
+		<div class="login-panel">
+			<a class="brand-mark" href="/" aria-label="Furniro home">Furniro<span>.</span></a>
+
+			<div class="form-heading">
+				<p class="eyebrow">WELCOME BACK</p>
+				<h1 id="login-title">Good to see you again.</h1>
+				<p class="intro">Sign in to pick up where your home story left off.</p>
+			</div>
+
+			<form class="login-form" (ngSubmit)="onLogin()">
+				<div class="field-group">
+					<label for="email">Email address</label>
+					<input [(ngModel)]="loginObj.EmailId" id="email" name="EmailId" type="email" placeholder="you@example.com" autocomplete="email" required>
+				</div>
+
+				<div class="field-group">
+					<div class="password-label">
+						<label for="password">Password</label>
+						<a href="#forgot-password">Forgot password?</a>
+					</div>
+					<input [(ngModel)]="loginObj.password" id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+				</div>
+
+				<label class="remember-option" for="remember-me">
+					<input id="remember-me" name="remember-me" type="checkbox">
+					<span>Keep me signed in</span>
+				</label>
+
+				<p class="form-feedback" role="alert" *ngIf="errorMessage">{{ errorMessage }}</p>
+				<button class="submit-button" type="submit" [disabled]="isSubmitting">
+					{{ isSubmitting ? 'Signing in...' : 'Sign in' }} <span aria-hidden="true">&rarr;</span>
+				</button>
+			</form>
+
+			<p class="signup-prompt">New to Furniro? <a href="#create-account">Create an account</a></p>
+			<p class="privacy-note">By continuing, you agree to our <a href="#terms">Terms</a> and <a href="#privacy">Privacy Policy</a>.</p>
+		</div>
+	</section>
+</main>
